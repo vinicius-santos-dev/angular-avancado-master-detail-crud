@@ -29,8 +29,13 @@ export class InMemoryDatabase implements InMemoryDbService {
         name: 'Criptomoedas',
         description: 'Ativos digitais',
       },
+      {
+        id: 6,
+        name: 'Memes',
+        description: 'Teste nos memes',
+      },
     ];
 
-    return categories;
+    return { categories };
   }
 }
