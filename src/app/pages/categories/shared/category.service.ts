@@ -15,23 +15,17 @@ export class CategoryService {
   constructor(private http: HttpClient) {}
 
   public getAll(): Observable<Category[]> {
-    return this.http
-      .get(this.apiPath)
-      .pipe(catchError(this.handleError), map(this.jsonDataToCategories));
+    return this.http.get(this.apiPath).pipe(catchError(this.handleError), map(this.jsonDataToCategories));
   }
 
   public getById(id: number): Observable<Category> {
     const url = `${this.apiPath}/${id}`;
 
-    return this.http
-      .get(url)
-      .pipe(catchError(this.handleError), map(this.jsonDataToCategory));
+    return this.http.get(url).pipe(catchError(this.handleError), map(this.jsonDataToCategory));
   }
 
   public create(category: Category): Observable<Category> {
-    return this.http
-      .post(this.apiPath, category)
-      .pipe(catchError(this.handleError), map(this.jsonDataToCategory));
+    return this.http.post(this.apiPath, category).pipe(catchError(this.handleError), map(this.jsonDataToCategory));
   }
 
   public update(category: Category): Observable<Category> {
