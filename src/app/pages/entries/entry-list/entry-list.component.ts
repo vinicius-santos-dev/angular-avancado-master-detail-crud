@@ -15,22 +15,18 @@ export class EntryListComponent implements OnInit {
 
   ngOnInit(): void {
     this.entryService.getAll().subscribe(
-      (entries) => (this.entries = entries),
+      (entries) => (this.entries = entries.sort((a, b) => b.id - a.id)),
       (error) => alert('Erro ao carregar a lista.')
     );
   }
 
   public deleteEntry(entry: Entry): void {
-    const mustDelete: boolean = confirm(
-      'Deseja realmente deletar essa categoria?'
-    );
+    const mustDelete: boolean = confirm('Deseja realmente deletar essa categoria?');
 
     if (mustDelete) {
       this.entryService.delete(entry.id).subscribe(
         () => {
-          this.entries = this.entries.filter(
-            (element) => element != entry
-          );
+          this.entries = this.entries.filter((element) => element != entry);
         },
         () => alert('Erro ao tentar excluir!')
       );
