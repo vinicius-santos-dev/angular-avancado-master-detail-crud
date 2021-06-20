@@ -16,6 +16,10 @@ export class Entry extends BaseResourceModel {
     super();
   }
 
+  public static fromJson(jsonData: any): Entry {
+    return Object.assign(new Entry(), jsonData);
+  }
+
   public static types = {
     expense: 'Despesa',
     revenue: 'Receita',
