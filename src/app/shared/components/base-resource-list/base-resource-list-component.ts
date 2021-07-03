@@ -4,11 +4,9 @@ import { BaseResourceService } from '../../services/base-resource.service';
 
 @Injectable()
 export abstract class BaseResourceListComponent<T extends BaseResourceModel> implements OnInit {
-  constructor(
-    protected injector: Injector,
-    public resources: T[] = [],
-    protected baseResourceService: BaseResourceService<T>
-  ) {}
+  public resources: T[] = [];
+
+  constructor(protected baseResourceService: BaseResourceService<T>) {}
 
   ngOnInit(): void {
     this.baseResourceService.getAll().subscribe(
