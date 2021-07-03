@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterContentChecked, Injector } from '@angular/core';
+import { Component, OnInit, AfterContentChecked, Injector, Injectable } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { BaseResourceModel } from '../../models/base-resource.model';
@@ -9,7 +9,8 @@ import { switchMap } from 'rxjs/operators';
 import toastr from 'toastr';
 import { ActivatedRoute, Router } from '@angular/router';
 
-export abstract class BaseResourceFormComponet<T extends BaseResourceModel> implements OnInit, AfterContentChecked {
+@Injectable()
+export abstract class BaseResourceFormComponent<T extends BaseResourceModel> implements OnInit, AfterContentChecked {
   public resourceForm: FormGroup;
   public serverErrorMessages: string[] = null;
   public pageTitle: string;
