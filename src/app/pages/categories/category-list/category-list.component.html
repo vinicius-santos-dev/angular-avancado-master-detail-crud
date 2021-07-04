@@ -1,13 +1,6 @@
 <app-breadcrumb [items]="[{ text: 'Categorias' }]"></app-breadcrumb>
 
-<div class="row mb-5">
-  <div class="col-md">
-    <h1 class="border-left pl-2">Categorias</h1>
-  </div>
-  <div class="col-md">
-    <a routerLink="new" class="btn btn-success float-right"> + Nova Categoria</a>
-  </div>
-</div>
+<app-page-header pageTitle="Categorias" buttonClass="btn-success" buttonLink="new" buttonText="+ Nova Categoria"></app-page-header>
 
 <table class="table table-hover">
   <thead>
