@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 
-interface BreadCrumbItem {
+export interface BreadCrumbItem {
   text: string;
   link?: string;
 }

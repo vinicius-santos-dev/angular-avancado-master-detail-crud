@@ -1,20 +1,11 @@
-<nav class="mb-5">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item">
-      <a routerLink="/">Home</a>
-    </li>
-    <li class="breadcrumb-item active">Categorias</li>
-  </ol>
-</nav>
+<app-breadcrumb [items]="[{ text: 'Categorias' }]"></app-breadcrumb>
 
 <div class="row mb-5">
   <div class="col-md">
     <h1 class="border-left pl-2">Categorias</h1>
   </div>
   <div class="col-md">
-    <a routerLink="new" class="btn btn-success float-right">
-      + Nova Categoria</a
-    >
+    <a routerLink="new" class="btn btn-success float-right"> + Nova Categoria</a>
   </div>
 </div>
 
@@ -32,17 +23,8 @@
         <small>{{ category.description }}</small>
       </td>
       <td>
-        <a
-          [routerLink]="[category.id, 'edit']"
-          class="btn btn-outline-info btn-sm mr-2"
-          >Editar</a
-        >
-        <button
-          class="btn btn-outline-danger btn-sm"
-          (click)="deleteResource(category)"
-        >
-          Excluir
-        </button>
+        <a [routerLink]="[category.id, 'edit']" class="btn btn-outline-info btn-sm mr-2">Editar</a>
+        <button class="btn btn-outline-danger btn-sm" (click)="deleteResource(category)">Excluir</button>
       </td>
     </tr>
   </tbody>
